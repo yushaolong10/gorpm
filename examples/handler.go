@@ -54,16 +54,16 @@ func monitor() {
 }
 
 type HttpMessage struct {
-	Code           int           `json:"code"`
-	Message        string        `json:"message"`
-	ReqTime        string        `json:"request_time"`
-	ReqTimestamp   int64         `json:"request_timestamp"`
-	MessageId      string        `json:"message_id"`
-	Method         string        `json:"method"`
-	URL            string        `json:"url"`
-	RawResponse    *HttpResponse `json:"raw_response"`
-	ReplayResponse *HttpResponse `json:"replay_response"`
-	Reason         []string      `json:"reason,omitempty"`
+	Code           int               `json:"code"`
+	Message        string            `json:"message"`
+	ReqTime        string            `json:"request_time"`
+	ReqTimestamp   int64             `json:"request_timestamp"`
+	MessageId      string            `json:"message_id"`
+	Method         string            `json:"method"`
+	URL            string            `json:"url"`
+	RawResponse    *HttpResponse     `json:"raw_response"`
+	ReplayResponse *HttpResponse     `json:"replay_response"`
+	Reason         *gorpm.ReasonNode `json:"reason,omitempty"`
 }
 
 func handleMessage(req *gorpm.GorMessage, resp *gorpm.GorMessage, reply *gorpm.GorMessage) {
