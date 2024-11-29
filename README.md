@@ -64,6 +64,7 @@ bash examples/build.sh
 ```
 (3) execute the gor command on the target machine, specifying the middleware binary file:
 ```bash
+# you should modify --http-allow-url and --output-http in your scenario.
 /usr/local/bin/gor --input-raw ":8080"  \
 --http-allow-url "/openapi/yourapi"     \
 --output-http="http://demo:8080"        \
